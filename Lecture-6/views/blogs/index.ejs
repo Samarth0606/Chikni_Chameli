@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Displaying list of all blogs</h1>
+    <a href="/blog/new">New Blog</a>
+
+    <% for(let item of blogs){ %>
+        <h2>ID: <%=item.id%> </h2>
+        <h2>Author: <%=item.author%> </h2>
+        <h2>Comment: <%=item.comment%> </h2>
+        <a href="/blogs/<%=item.id%>">Show more</a>
+        <form action="/blogs/<%=item.id%>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+    <% } %>
+</body>
+</html>
