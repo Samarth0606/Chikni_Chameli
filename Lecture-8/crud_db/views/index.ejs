@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Displaying all the Netas</h1>
+    <a href="/api/new"> <button>NEW</button> </a>
+    <% for(let item of allNetas){ %>
+        <div>
+            <h1>Name: <%= item.name%> </h1>
+            <h1>Party: <%= item.party%> </h1>
+            <h1>IsMale: <%= item.isMale%> </h1>
+            <h1>IsCorrupt: <%= item.isCorrupt%> </h1>
+            <a href="/api/neta/<%= item._id%>"> <button>Show more</button> </a>
+            <a href="/api/neta/edit/<%= item._id%>"> <button>Edit</button> </a>
+    
+            <form action="/api/neta/delete/<%= item._id%>?_method=DELETE" method="POST">
+                <button>Delete</button>
+            </form>
+        </div>
+    <% } %>
+</body>
+</html>
