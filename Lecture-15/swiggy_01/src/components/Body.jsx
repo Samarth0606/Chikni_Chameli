@@ -8,7 +8,13 @@ function Body() {
         <button className='border rounded-3xl m-4 p-4 text-2xl'>Rating 4.2+</button>
         <button className='border rounded-3xl m-4 p-4 text-2xl'>Reset</button>
 
-        <div>
+        <div className='flex flex-wrap w-10/12 m-auto'>
+            <RestaurantCard />
+            <RestaurantCard />
+            <RestaurantCard />
+            <RestaurantCard />
+            <RestaurantCard />
+            <RestaurantCard />
             <RestaurantCard />
             <RestaurantCard />
         </div>
