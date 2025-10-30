@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import RestaurantCard from './RestaurantCard'
 import Apicalling from './Apicalling'
+import Search from './Search';
 
 function Body() {
   const allRestaurants = Apicalling();
@@ -31,6 +32,9 @@ function Body() {
         <button onClick={()=>handleTopRest(allRestaurants)} className={isClicked1?'bg-amber-200 border rounded-3xl m-4 p-4 text-2xl' : 'border rounded-3xl m-4 p-4 text-2xl' } >Rating 4.2+</button>
         <button onClick={()=>handleReset(allRestaurants)} className={isClicked2?'bg-amber-200 border rounded-3xl m-4 p-4 text-2xl' : 'border rounded-3xl m-4 p-4 text-2xl' }>Reset</button>
 
+        <div>
+            <Search allRestaurants={allRestaurants} setAllRestData={setAllRestData} />
+        </div>
         <div className='flex flex-wrap w-10/12 m-auto'>
            {
             allRestData.map((restaurant)=>{
